@@ -31,7 +31,7 @@ export default function User() {
           <span>
             <img
               style={{width: 30, height: 30, verticalAlign: '-10px'}}
-              src="//192.168.137.1:7001/public/upload/20211108/1636341404143.png" alt="个签图标" />
+              src="//124.220.24.244:7001/public/upload/20211108/1636341404143.png" alt="个签图标" />
             <b>{user.signature || '暂无个签'}</b>
           </span>
         </div>
@@ -45,19 +45,19 @@ export default function User() {
           hasArrow
           title="用户信息修改"
           onClick={() => history.push('/userinfo')}
-          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//192.168.137.1:7001/public/upload/20211108/1636341056822.png" />}
+          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//124.220.24.244:7001/public/upload/20211108/1636341056822.png" />}
         />
         <Cell
           hasArrow
           title="重置密码"
           onClick={() => history.push('/account')}
-          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//192.168.137.1:7001/public/upload/20211108/1636341084992.png" />}
+          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//124.220.24.244:7001/public/upload/20211108/1636341084992.png" />}
         />
         <Cell
           hasArrow
           title="关于我的"
           onClick={() => history.push('/about')}
-          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//192.168.137.1:7001/public/upload/20211108/1636341075720.png" />}
+          icon={<img style={{ width: 20, verticalAlign: '-7px' }} src="//124.220.24.244:7001/public/upload/20211108/1636341075720.png" />}
         />
       </div>
       <Button className={sty.logout} block theme="danger" onClick={logout}>退出登录</Button>
