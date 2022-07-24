@@ -43,11 +43,11 @@ export default function BillItem({ bill }) {
         <div className={sty.date}>{bill.date}</div>
         <div className={sty.money}>
           <span>
-            <img src="//s.yezgea02.com/1615953405599/zhi%402x.png" alt="支" />
+            <span className={sty.moneyIcon}>支</span>
             <span>¥{expense.toFixed(2)}</span>
           </span>
           <span>
-            <img src="//s.yezgea02.com/1615953405599/shou%402x.png" alt="收" />
+            <span className={sty.moneyIcon}>收</span>
             <span>¥{income.toFixed(2)}</span>
           </span>
         </div>

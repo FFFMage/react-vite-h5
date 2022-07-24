@@ -74,7 +74,6 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
   // 监听输入框
   const handleMoney = (value) => {
     value = String(value)
-    console.log(value)
     // 点击键盘图标按钮时
     if (value === 'close') {
       setShow(false)

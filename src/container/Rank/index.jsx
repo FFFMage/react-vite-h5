@@ -22,7 +22,7 @@ export default function Rank() {
         <div className={sty.wrapScroll}>
           <div className={sty.head}>
             <span>{currentMonth}月共{curType === 'expense'? '支出': '收入'}</span>
-            <span>¥{curTotalNumber.toFixed(2)}</span>
+            <span>¥{curTotalNumber}</span>
           </div>
           <div className={sty.rankContent}>
             <div className={cls({ [sty.type]: true, [sty.expense]: curType === 'expense', [sty.income]: curType === 'income' })}>

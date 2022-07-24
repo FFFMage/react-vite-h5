@@ -35,9 +35,9 @@ export default function Detail() {
       title: '删除',
       content: '确认删除账单?',
       onOk: async() => {
-        const { data } = await _delDetail({id})
+        await _delDetail({id})
         Toast.show('删除成功!')
-        history.push('/data')
+        history.goBack()
       }
     })
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import BillItem from '@/components/BillItem'
-import { Icon, Pull } from 'zarm'
+import { Icon, Pull, Loading } from 'zarm'
 import dayjs from 'dayjs'
 import { _getBillList } from '@/network/bill'
 import { REFRESH_STATE, LOAD_STATE } from '@/utils' // pull组件需要一些常量
@@ -31,11 +31,13 @@ export default function Home() {
 
   // 获取账单方法
   const getBillList = async () => {
+    Loading.show()
     const { data } = await _getBillList({
       page,
       currentTime,
       currentSelect
     })
+    Loading.hide()
     if (page === 1) {
       setList(data.list)
     } else {

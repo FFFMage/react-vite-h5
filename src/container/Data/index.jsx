@@ -35,13 +35,16 @@ export default function Data() {
   const getData = async () => {
     const { data } = await _getData({ currentMonth });
     // 总收支
-    setTotalExpense(data.total_expense)
-    setTotalIncome(data.total_income)
+    setTotalExpense(data.total_expense.toFixed(2))
+    setTotalIncome(data.total_income.toFixed(2))
     // 排行支出收入 数据
     setRankExpense(data.expense_rank_data)
     setRankIncome(data.income_rank_data)
     // 过滤支出和收入
     // 过滤支出项 倒序排序
+    data.total_data.forEach(item => {
+      item.number = item.number.toFixed(2)
+    })
     const expense_data = data.total_data.filter(item => 
       item.pay_type === 1
     ).sort((a, b) => b.number - a.number)

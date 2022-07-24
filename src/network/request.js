@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { Toast } from 'zarm'
 
+const MODE = import.meta.env.MODE // 环境变量
+
+export const BaseUrl = MODE == 'development' ? '/api' : 'http://124.220.24.244';
+
 export function request(config) {
-  const MODE = import.meta.env.MODE
+  
   const instance = axios.create({
     baseURL: '/api',
     timeout: 5000,
@@ -24,7 +28,7 @@ export function request(config) {
       }
       if (res.data.code !== 200) {
         if (res.data.msg) Toast.show(res.data.msg)
-        if (res.data.msg == 401) {
+        if (res.data.code == 401) {
           window.location.href = '/login'
         }
         return Promise.reject(res.data)
